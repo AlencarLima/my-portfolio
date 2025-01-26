@@ -10,7 +10,7 @@ let theme = createTheme({
     },
   },
   typography: {
-      fontFamily: 'Helvetica Neue',
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif',
   }
 });
 
