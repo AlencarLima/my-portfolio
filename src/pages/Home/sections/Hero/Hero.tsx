@@ -2,6 +2,7 @@ import { Container, styled, Grid2, Typography, Box } from "@mui/material"
 import Avatar from "../../../../assets/images/avatar_insta.jpeg";
 import DownloadIcon from '@mui/icons-material/Download';
 import EmailIcon from '@mui/icons-material/Email';
+import { ReactTyped } from "react-typed";
 import StyledButton from "../../../../components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../components/AnimatedBackground/AnimatedBackground";
 
@@ -45,11 +46,20 @@ const Hero = () => {
                                     <StyledImage src={Avatar} />
                                 </Box>
                             </Box>
-
                         </Grid2>
                         <Grid2 size={{ xs: 12, md: 7 }}>
-                            <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Carlos Alencar</Typography>
-                            <Typography color="primary.contrastText" variant="h2" textAlign="center">I'M a Software Engineer</Typography>
+                            <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>
+                                Carlos Alencar
+                            </Typography>
+
+                            <Typography color="primary.contrastText" variant="h2" textAlign="center">
+                                <ReactTyped
+                                    startWhenVisible
+                                    strings={["I'm a Software Engineer!"]}
+                                    typeSpeed={50} // Velocidade da digitação
+                                    showCursor={false} // Mostrar cursor
+                                />
+                            </Typography>
                             <Grid2 container display="flex" justifyContent="center" spacing={2} pt={3}>
                                 <Grid2 size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
                                     <StyledButton onClick={() => window.open("/assets/cvs/cv_carlos.pdf", '_blank')}>
