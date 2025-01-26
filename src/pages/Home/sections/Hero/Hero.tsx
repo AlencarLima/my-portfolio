@@ -15,6 +15,9 @@ const Hero = () => {
         [theme.breakpoints.up('xs')]: {
             paddingTop: "100px"
         },
+        [theme.breakpoints.up('sm')]: {
+            paddingTop: "200px"
+        },
         [theme.breakpoints.up('md')]: {
             paddingTop: "0px"
         }
@@ -49,13 +52,13 @@ const Hero = () => {
                             <Typography color="primary.contrastText" variant="h2" textAlign="center">I'M a Software Engineer</Typography>
                             <Grid2 container display="flex" justifyContent="center" spacing={2} pt={3}>
                                 <Grid2 size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                                    <StyledButton onClick={() => console.log("Download CV")}>
+                                    <StyledButton onClick={() => window.open("/assets/cvs/cv_carlos.pdf", '_blank')}>
                                         <DownloadIcon /><Typography>Download CV</Typography>
                                     </StyledButton>
                                 </Grid2>
 
                                 <Grid2 size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                                    <StyledButton onClick={() => console.log("Contact me")}>
+                                    <StyledButton onClick={() => window.location.href = 'mailto:carlos.alencar@aluno.ufabc.edu.br?subject=Contato&body=Olá, gostaria de falar com você!'}>
                                         <EmailIcon /><Typography>Contact me</Typography>
                                     </StyledButton>
                                 </Grid2>
