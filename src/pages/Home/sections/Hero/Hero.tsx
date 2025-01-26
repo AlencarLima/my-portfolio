@@ -12,10 +12,16 @@ const Hero = () => {
         height: "100vh",
         display: "flex",
         alignItems: "center",
+        [theme.breakpoints.up('xs')]: {
+            paddingTop: "100px"
+        },
+        [theme.breakpoints.up('md')]: {
+            paddingTop: "0px"
+        }
     }
     ))
 
-    const StyledImage = styled("img")(({theme}) => ({
+    const StyledImage = styled("img")(({ theme }) => ({
         width: "75%",
         borderRadius: "50%",
         border: `2px solid ${theme.palette.secondary.contrastText}`,
@@ -36,20 +42,20 @@ const Hero = () => {
                                     <StyledImage src={Avatar} />
                                 </Box>
                             </Box>
-                            
+
                         </Grid2>
                         <Grid2 size={{ xs: 12, md: 7 }}>
                             <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={2}>Carlos Alencar</Typography>
                             <Typography color="primary.contrastText" variant="h2" textAlign="center">I'M a Software Engineer</Typography>
                             <Grid2 container display="flex" justifyContent="center" spacing={2} pt={3}>
                                 <Grid2 size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                                    <StyledButton>
+                                    <StyledButton onClick={() => console.log("Download CV")}>
                                         <DownloadIcon /><Typography>Download CV</Typography>
                                     </StyledButton>
                                 </Grid2>
 
                                 <Grid2 size={{ xs: 12, md: 4 }} display="flex" justifyContent="center">
-                                    <StyledButton>
+                                    <StyledButton onClick={() => console.log("Contact me")}>
                                         <EmailIcon /><Typography>Contact me</Typography>
                                     </StyledButton>
                                 </Grid2>
