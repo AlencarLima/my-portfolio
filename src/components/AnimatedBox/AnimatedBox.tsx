@@ -5,9 +5,11 @@ import { Box, Slide, styled } from "@mui/material";
 interface AnimatedBoxProps {
     children: React.ReactNode;
     direction: "left" | "right" | "up" | "down" | undefined;
+    styleProps?: React.CSSProperties;
+    hoverStyle?: React.CSSProperties;
 }
 
-const AnimatedBox = ({children, direction}: AnimatedBoxProps) => {
+const AnimatedBox = ({children, direction, styleProps, hoverStyle}: AnimatedBoxProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
 
@@ -33,27 +35,31 @@ const AnimatedBox = ({children, direction}: AnimatedBoxProps) => {
     };
   }, []);
 
-  const StyledBox = styled(Box)(() => ({
+  const StyledBox = styled(Box)<{ styleProps?: React.CSSProperties; hoverStyle?: React.CSSProperties }>(({ theme, styleProps, hoverStyle }) => ({
     backgroundColor: "transparent",
-    height: "150px",
-    width: "100%",
     borderRadius: "2px",
     border: `1px solid #232323`,
     display: "flex",
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center", // opcional
     padding: "20px",
+    gap: "5px",
+    '&:hover': {
+            backgroundColor: theme.palette.secondary.light,
+            ...hoverStyle // opcional
+        },
+    ...styleProps
   }));
 
   return (
-    <div ref={ref} style={{ minHeight: "200px", margin: "100px 0" }}>
+    <div ref={ref} style={{ minHeight: "200px", minWidth: "350px" }}>
       <Slide 
       direction={direction} 
       in={isVisible} 
       mountOnEnter 
       unmountOnExit
       timeout={1000}>
-          <StyledBox >
+          <StyledBox styleProps={styleProps} hoverStyle={hoverStyle}>
             {children}
           </StyledBox>
       </Slide>
