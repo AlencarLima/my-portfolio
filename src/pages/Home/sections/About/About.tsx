@@ -7,20 +7,11 @@ import SkillsTable from "../../../../components/SkillsTable/SkillsTable";
 
 const About = () => {
 
-    const StyledAbout = styled("div")(({theme}) => ({
+    const StyledAbout = styled("div")(() => ({
         backgroundColor: "white",
-        height: "100vh",
+        height: "65vh",
         display: "flex",
-        alignItems: "center",
-        [theme.breakpoints.up('xs')]: {
-            paddingTop: "950px"
-        },
-        [theme.breakpoints.up('sm')]: {
-            paddingTop: "900px"
-        },
-        [theme.breakpoints.up('md')]: {
-            paddingTop: "0px"
-        }
+        paddingTop: "20px",
     }))
 
     return (
@@ -28,15 +19,15 @@ const About = () => {
             <StyledAbout>
                 <Container maxWidth="lg">
                     <Grid2 spacing={1}>
-                        <Typography color="black" variant="h1" textAlign="center" pb={2}>
-                            About Me
+                        <Typography color="black" variant="h2" textAlign="center" pb={2}>
+                            Sobre
                         </Typography>
                     </Grid2>
                     <Grid2 container spacing={2} display="flex" justifyContent="center">
                         <Grid2 size={{ xs: 12, md: 6 }} display="flex" justifyContent="center">
                             <AnimatedBox direction="right">
                                 <MilitaryTechIcon />
-                                <Typography>
+                                <Typography fontWeight={700}>
                                     Experiência
                                 </Typography>
                                 <Typography>
@@ -50,7 +41,7 @@ const About = () => {
                         <Grid2 size={{ xs: 12, md: 6 }} display="flex" justifyContent="center">
                             <AnimatedBox direction="left">
                                 <SchoolIcon />
-                                <Typography>
+                                <Typography fontWeight={700}>
                                     Educação
                                 </Typography>
                                 <Typography>
@@ -68,7 +59,7 @@ const About = () => {
                         </Typography>
                     </Grid2>
                     <Grid2 spacing={1}>
-                        <Typography color="black" variant="h1" textAlign="center" pb={2}>
+                        <Typography color="black" variant="h2" textAlign="center" pb={2}>
                             Skills
                         </Typography>
                     </Grid2>
