@@ -17,7 +17,7 @@ const Hero = () => {
             paddingTop: "100px"
         },
         [theme.breakpoints.up('sm')]: {
-            paddingTop: "200px"
+            paddingTop: "260px"
         },
         [theme.breakpoints.up('md')]: {
             paddingTop: "0px"
@@ -29,6 +29,15 @@ const Hero = () => {
         width: "75%",
         borderRadius: "50%",
         border: `2px solid ${theme.palette.secondary.contrastText}`,
+        [theme.breakpoints.up('xs')]: {
+            width: "50%"
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: "50%"
+        },
+        [theme.breakpoints.up('md')]: {
+            width: "75%"
+        }
     }
     ))
 
