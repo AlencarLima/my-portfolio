@@ -7,11 +7,14 @@ import SkillsTable from "../../../../components/SkillsTable/SkillsTable";
 
 const About = () => {
 
-    const StyledAbout = styled("div")(() => ({
+    const StyledAbout = styled("div")(({theme}) => ({
         backgroundColor: "white",
-        height: "65vh",
+        
         display: "flex",
         paddingTop: "20px",
+        [theme.breakpoints.down("xs")]: {
+
+        }
     }))
 
     return (
@@ -21,6 +24,11 @@ const About = () => {
                     <Grid2 spacing={1}>
                         <Typography color="black" variant="h2" textAlign="center" pb={2}>
                             Sobre
+                        </Typography>
+                    </Grid2>
+                    <Grid2 spacing={1} pb={4}>
+                        <Typography textAlign="justify">
+                            Olá 👋🏽! Meu nome é Carlos e sou Desenvolvedor Full-Stack. Estou em fase de conclusão do bacharelado em Ciência da Computação e também cursando Ciência de Dados. Minha trajetória começou com uma forte afinidade pela área de exatas, que me levou a cursar Técnico em Mecatrônica. Lá, tive contato com diversas áreas, mas foi a computação que realmente despertou minha curiosidade.
                         </Typography>
                     </Grid2>
                     <Grid2 container spacing={2} display="flex" justifyContent="center">
@@ -52,11 +60,6 @@ const About = () => {
                                 </Typography>
                             </AnimatedBox>
                         </Grid2>
-                    </Grid2>
-                    <Grid2 spacing={1}>
-                        <Typography textAlign="justify">
-                        Olá 👋🏽! Meu nome é Carlos e sou Desenvolvedor Full-Stack. Estou em fase de conclusão do bacharelado em Ciência da Computação e também cursando Ciência de Dados. Minha trajetória começou com uma forte afinidade pela área de exatas, que me levou a cursar Técnico em Mecatrônica. Lá, tive contato com diversas áreas, mas foi a computação que realmente despertou minha curiosidade.
-                        </Typography>
                     </Grid2>
                     <Grid2 spacing={1}>
                         <Typography color="black" variant="h2" textAlign="center" pb={2}>

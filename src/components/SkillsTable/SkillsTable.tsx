@@ -43,7 +43,7 @@ const SkillsTable = () => {
           <StyledBox>HTML5</StyledBox>
         </Grid2>
       </Grid2>
-      <Grid2 container spacing={2}>
+      <Grid2 container spacing={2} pb={2}>
         <Grid2 size={{ xs: 12, md: 2 }}>
           <StyledBox>CSS3</StyledBox>
         </Grid2>
